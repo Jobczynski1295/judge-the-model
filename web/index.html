@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102b3a">
+  <meta name="description" content="A clinical classification evaluation dashboard for readmission and diabetes screening.">
+  <title>Judge the Model | Clinical Decision Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <aside class="sidebar" aria-label="Dashboard controls">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">JM</span><div><strong>JUDGE THE MODEL</strong><small>CLINICAL DECISION LAB</small></div></div>
+    <div class="sidebar-divider"></div>
+    <div class="nav-label">EXPLORE THE ANALYSIS</div>
+    <fieldset><legend class="visually-hidden">Section</legend><div id="sections"></div></fieldset>
+    <div class="sidebar-divider"></div>
+    <div class="nav-label">ANALYSIS CONTROLS</div>
+    <label for="dataset">Clinical scenario</label><select id="dataset"></select>
+    <label for="model">Classification model</label><select id="model"></select>
+    <div class="sidebar-note"><span class="note-dot" aria-hidden="true"></span><div><strong>Evidence before intuition.</strong><p>Compare errors, adjust thresholds, and assess generalization before recommending a model.</p></div></div>
+    <div class="sidebar-footer">CAI 5735 <span>·</span> Module 11</div>
+  </aside>
+  <main>
+    <div class="topline"><span>MODEL EVALUATION / INTERACTIVE LAB</span><span class="topline-status"><i></i> EXPLORE THE EVIDENCE</span></div>
+    <header class="hero"><div class="eyebrow">HEALTHCARE ANALYTICS <span class="eyebrow-rule"></span> CLASSIFICATION</div><h1>Judge the <em>Model.</em></h1><p>Which classifier would you trust for this job, at what threshold, and with what limits?</p><div class="hero-tags"><span>01 / BEYOND ACCURACY</span><span>02 / THRESHOLD TRADEOFFS</span><span>03 / GENERALIZATION</span></div></header>
+    <div class="workspace-heading"><div><span class="eyebrow">THE EVIDENCE</span><h2 id="section-title"></h2></div><span class="workspace-pill">INTERACTIVE ANALYSIS</span></div>
+    <div class="context-strip" id="context"></div>
+    <section class="analysis-panel" id="content" aria-live="polite"><p>Loading results…</p></section>
+    <section class="box recommendations" id="recommendations" aria-labelledby="rec-h"><div class="recommendations-head"><span class="eyebrow">FROM ANALYSIS TO ACTION</span><h2 id="rec-h">Clinical recommendations</h2></div><div id="recommendations-body"></div></section>
+    <footer class="page-footer"><span>JUDGE THE MODEL <span class="footer-separator">/</span> CAI 5735</span><span>For learning and evaluation — not clinical deployment.</span></footer>
+  </main>
+</body>
+</html>
