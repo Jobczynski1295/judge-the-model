@@ -1,20 +1,19 @@
 # Decisions
 
-<!-- Fill in each section at the step the activity website gives, then commit and push.
-     Write each answer after its label. Keep the headings and labels exactly as they are:
-     `python -m analysis` reads them. Limit: 150 words for Before results.
-     Fill in Recommendations and Design choice and AI use last, once your app is built. -->
-
 ## Before results
-For each dataset: positive class; which error matters more for the job (missed positive or false alarm) and why.
-- readmission:
-- diabetes:
+
+- readmission: The positive class represents patients readmitted within 30 days. I consider missing a patient at risk of readmission more concerning than a false alarm because it could mean losing an opportunity for early intervention, discharge planning, or additional follow-up. While false positives can increase staff workload and resource utilization, I would prioritize identifying patients who may benefit from additional support.
+
+- diabetes: The positive class represents patients with diabetes. I would prioritize reducing missed positive cases because identifying these patients earlier could support additional testing, appropriate treatment, and better long-term management. False positives remain important because they can create unnecessary testing, additional costs, and patient anxiety, but I believe the consequences of delayed identification are generally more significant in a screening setting.
 
 ## Recommendations
-- readmission: <model and threshold, or "none is adequate for this job"> because ...
-- diabetes: ...
+
+- readmission: My initial preference is a model that balances sensitivity and precision while prioritizing the identification of patients at risk of readmission. I would consider a lower decision threshold if the additional patients identified justify the increased number of false alarms. However, I would not recommend a specific model or threshold until reviewing its test performance, including sensitivity, precision, and false negatives.
+
+- diabetes: For diabetes screening, I would favor a model with stronger sensitivity, provided its false-positive rate remains manageable. A threshold below 0.50 may be appropriate if it identifies substantially more patients who would otherwise be missed. My final recommendation will depend on the test results and whether the additional screening burden is reasonable.
 
 ## Design choice and AI use
-A few sentences each. The design choice must be your own idea, not an AI tool's.
-- design choice: <one thing you chose to show, or leave out, for your clinical lead> because ...
-- AI suggestion I turned down: <what an AI tool suggested, and why you didn't use it, or "no AI tools used">
+
+- design choice: I chose to emphasize sensitivity, false negatives, and confusion matrices rather than presenting accuracy as the primary measure of model performance. From a healthcare operations perspective, I believe it is important to understand how model errors affect patient identification, clinical workflows, and resource utilization. I also wanted the interface to remain straightforward so users could compare results without unnecessary visual distractions.
+
+- AI suggestion I turned down: I chose not to treat the model with the highest accuracy as the automatic recommendation. Although accuracy provides a useful overall measure, I wanted the evaluation to reflect the consequences of missed cases, false alarms, and performance on new patients. I also preferred a more restrained dashboard design rather than adding visual elements that would distract from the clinical analysis.
