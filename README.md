@@ -1,4 +1,4 @@
-**App:** _paste your public app link here_
+App: https://jobczynski1295.github.io/judge-the-model/web/
 
 # Judge the Model
 
